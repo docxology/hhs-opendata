@@ -1,0 +1,1 @@
+BILLING_PROVIDER_NPI_NUM,total_paid,total_claims,risk_upcoding,risk_velocity,risk_phantom,risk_cost_outlier,risk_relationship,risk_temporal,fraud_score,risk_tier

@@ -1,0 +1,21 @@
+{
+  "row_count": 2272462,
+  "date_min": "2018-01",
+  "date_max": "2024-12",
+  "total_paid": 10875128500.11001,
+  "avg_paid": 4785.615117044866,
+  "median_paid": 616.435,
+  "max_paid": 102046918.74,
+  "min_paid": -11518.42,
+  "std_paid": 104450.57730910239,
+  "total_claims": 188670949.0,
+  "avg_claims": 83.0249082272883,
+  "total_bene": 113038596.0,
+  "p25_paid": 88.0,
+  "p75_paid": 1949.2,
+  "p95_paid": 11538.536499999924,
+  "p99_paid": 65178.02430000044,
+  "billing_npis": 268048,
+  "servicing_npis": 628792,
+  "hcpcs_codes": 6563
+}

@@ -3,8 +3,6 @@ data/*.csv
 data/*.zip
 
 # Analysis outputs (regenerable)
-medicaid_analysis/plots/
-medicaid_analysis/output/
 medicaid_analysis/medicaid.db
 medicaid_analysis/data.csv.zip
 
