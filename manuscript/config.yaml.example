@@ -1,0 +1,27 @@
+# TODO-OWNER: fill in all placeholder fields before any rendering attempt.
+paper:
+  title: "TODO-OWNER: Medicaid Provider Spending — Analysis of the HHS Open Data Dataset"
+  subtitle: ""
+  version: "0.1-draft"
+
+authors:
+  - name: "TODO-OWNER"
+    orcid: "TODO-OWNER"
+    email: "TODO-OWNER"
+    affiliation: "TODO-OWNER"
+    corresponding: true
+
+publication:
+  doi: ""
+  journal: ""
+  volume: ""
+  pages: ""
+
+keywords:
+  - "Medicaid"
+  - "health services research"
+  - "anomaly detection"
+
+metadata:
+  license: "TODO-OWNER"
+  language: "en"
