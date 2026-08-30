@@ -16,6 +16,30 @@ uv run main.py --skip-fraud
 
 # Use sample dataset
 uv run main.py --sample
+
+# Analyse an arbitrary CSV
+uv run main.py --csv /path/to/file.csv
+```
+
+## Multi-Scale Runs
+
+`run_multi_scale.py` re-runs the full pipeline at 1%, 10%, 50%, and 100% data
+scales, redirecting output via the `MEDICAID_OUTPUT_DIR` / `MEDICAID_PLOTS_DIR`
+environment variables (honored by `utils/config.py`):
+
+```bash
+uv run run_multi_scale.py                  # all 4 scales → output/{1pct..100pct}/ + plots/
+uv run run_multi_scale.py --scales 1 10    # subset; auto-creates missing samples
+uv run create_sample.py --pct 1 10         # create sample CSVs explicitly
+```
+
+Each scale writes to `output/<label>/` and `plots/<label>/` (with `fraud/`
+subfolders). These artifacts are generated and regenerable.
+
+## Tests
+
+```bash
+uv run pytest                    # full suite (integration tests skip without data/sample.csv)
 ```
 
 ## Architecture
@@ -31,9 +55,10 @@ medicaid_analysis/
 ├── temporal/               # Time-series & seasonality (S11, S19, S21-S22, S25)
 ├── visualization/          # Deep-dive charts & dashboards (S20, S28, S32)
 ├── fraud/                  # Fraud detection suite (S33-S40)
+├── tests/                  # pytest suite (imports, CLI, sample-data integration)
 ├── docs/                   # Comprehensive documentation
-├── output/                 # Generated CSVs
-└── plots/                  # Generated visualizations
+├── output/                 # Generated CSVs (regenerable; incl. per-scale runs)
+└── plots/                  # Generated visualizations (same layout)
 ```
 
 ## Data

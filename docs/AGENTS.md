@@ -15,7 +15,7 @@
 - Dataset stays out of git; only code and docs are tracked.
 - Analysis is sectioned and modular; outputs land in `medicaid_analysis/output/`
   and `medicaid_analysis/plots/`.
-- `uv sync` + `uv run analysis.py` inside `medicaid_analysis/` per root README.
+- `uv sync` + `uv run main.py` inside `medicaid_analysis/` per root README (all 40 sections; `run_multi_scale.py` for per-scale runs).
 
 ## How docs here are maintained
 

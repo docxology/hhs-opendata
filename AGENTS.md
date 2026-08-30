@@ -69,5 +69,7 @@ top = lf.group_by("HCPCS_CODE").agg(pl.col("TOTAL_PAID").sum()).sort("TOTAL_PAID
 |---|---|
 | `README.md` | Project overview and quick start |
 | `AGENTS.md` | This file — AI agent context |
-| `medicaid_analysis/analysis.py` | Full analysis pipeline |
+| `medicaid_analysis/main.py` | CLI orchestrator — all 40 sections (`--sections`, `--skip-fraud`, `--sample`, `--csv`) |
+| `medicaid_analysis/run_multi_scale.py` | Runs the pipeline at 1/10/50/100% scales → `output/{1pct..100pct}/` |
+| `medicaid_analysis/create_sample.py` | Creates Bernoulli sample CSVs (`--pct 1 10`) from the full dataset |
 | `medicaid_analysis/pyproject.toml` | Dependencies and project metadata |
