@@ -1,9 +1,5 @@
 # AGENTS.md — `hhs-opendata/medicaid_analysis/temporal`
 
-> Local-only path under `projects/ongoing/DataTools/` — matched by the
-> root `.gitignore` rule `projects/*`; never commit. Repo-wide policy:
-> see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`.
-
 ## What this is
 
 Time-series analysis — seasonality, beneficiary intensity, rolling/cumulative metrics, year-over-year comparisons, and spending velocity.
@@ -29,6 +25,5 @@ __init__.py, intensity.py, patterns.py, rolling.py, velocity.py, yoy.py
 ## Gotchas
 
 - S22's `yoy_totals` return value is consumed by S32 (executive dashboard); run S22 before S32 or S32 receives `None`.
-- Never `git add` anything under `projects/ongoing/` (this repo tracks these
-  docs explicitly; data and generated artifacts stay untracked).
+- Generated `output/` and `plots/` artifacts are tracked here; `data/*.csv` and `medicaid.db` are git-ignored.
 - If the tree changed since 2026-08-29, re-verify the listing above against disk.

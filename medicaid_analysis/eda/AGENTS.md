@@ -1,9 +1,5 @@
 # AGENTS.md — `hhs-opendata/medicaid_analysis/eda`
 
-> Local-only path under `projects/ongoing/DataTools/` — matched by the
-> root `.gitignore` rule `projects/*`; never commit. Repo-wide policy:
-> see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`.
-
 ## What this is
 
 Exploratory Data Analysis — sections S01-S05 and S12: dataset shape and cardinalities, monthly/yearly spending trends, top procedures and providers, cost-per-claim/per-beneficiary efficiency, and high-value claims.
@@ -29,6 +25,5 @@ __init__.py, cost_efficiency.py, high_value.py, summary.py, top_entities.py, tre
 ## Gotchas
 
 - S06/S09/S17/S20 require S05 to have run first (they consume `cost_df`); `main.py` logs a warning and skips them otherwise when using `--sections`.
-- Never `git add` anything under `projects/ongoing/` (this repo tracks these
-  docs explicitly; data and generated artifacts stay untracked).
+- Generated `output/` and `plots/` artifacts are tracked here; `data/*.csv` and `medicaid.db` are git-ignored.
 - If the tree changed since 2026-08-29, re-verify the listing above against disk.

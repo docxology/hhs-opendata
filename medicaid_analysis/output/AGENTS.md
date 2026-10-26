@@ -1,9 +1,5 @@
 # AGENTS.md — `hhs-opendata/medicaid_analysis/output`
 
-> Local-only path under `projects/ongoing/DataTools/` — matched by the
-> root `.gitignore` rule `projects/*`; never commit. Repo-wide policy:
-> see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`.
-
 ## What this is
 
 Generated analysis artifacts from the 40-section pipeline (`uv run main.py`, run from `medicaid_analysis/`). **Regenerable** — delete and re-run the pipeline to recreate; nothing here is hand-authored. `1pct/`-`100pct/` hold per-sample-fraction runs (written by `run_multi_scale.py` via the `MEDICAID_OUTPUT_DIR`/`MEDICAID_PLOTS_DIR` env vars), each with its own `fraud/` subfolder; the top-level `NN_*.csv` files and `fraud/` are from the most recent default-output run. Naming: `NN_section_slug.csv` matching the section numbers in `../README.md`.
@@ -32,4 +28,4 @@ uv run run_multi_scale.py --scales 1 10 50 100   # -> output/<label>/ + plots/<l
 - A few legacy duplicates exist in `output/` (e.g. `11_seasonality.csv` and
   `11_temporal_patterns.csv` alongside `11_seasonal_patterns.csv`) from earlier
   section-naming iterations — current sections write the canonical names.
-- Never `git add` anything under `projects/ongoing/`.
+- Tracked in this repo (like the rest of `output/`); regenerate rather than hand-edit.

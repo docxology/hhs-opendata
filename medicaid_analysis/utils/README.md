@@ -20,4 +20,4 @@ cd medicaid_analysis
 uv run pytest tests/test_utils.py -v
 ```
 
-Part of the medicaid_analysis pipeline (local-only tree; see `../README.md`).
+Part of the medicaid_analysis pipeline (see `../README.md`).

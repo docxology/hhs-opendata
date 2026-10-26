@@ -4,7 +4,7 @@
 
 ### Prerequisites
 
-- Python 3.11+
+- Python 3.12+
 - [uv](https://docs.astral.sh/uv/) package manager
 
 ### Installation
@@ -77,18 +77,17 @@ Each section logs:
 
 ```
 output/
-├── 01_eda_summary.csv
+├── 01_summary_statistics.csv       # + 01_numeric_summary.csv, 01_eda_summary.json
 ├── 02_monthly_trends.csv
 ├── ...
-├── 32_executive_summary.csv
 └── fraud/
     ├── 33_upcoding_flagged.csv
     ├── 34_velocity_anomalies.csv
     └── ...
 
 plots/
-├── 01_eda_overview.png
-├── 02_monthly_dashboard.png
+├── 01_monthly_dashboard.png
+├── 02_yearly_spending.png
 ├── ...
 ├── 32_executive_summary.png
 └── fraud/

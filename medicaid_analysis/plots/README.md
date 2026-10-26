@@ -4,4 +4,4 @@ Generated PNG figures from the 40-section pipeline (`uv run main.py`, run from `
 
 Mirrors: `../output/` follows the same per-scale layout.
 
-Part of the medicaid_analysis subproject (generated artifacts; local-only, never committed). Parent: `../README.md`.
+Part of the medicaid_analysis subproject (generated artifacts; regenerable). Parent: `../README.md`.

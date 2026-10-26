@@ -29,4 +29,4 @@ cd medicaid_analysis
 uv run main.py --sections 7 10 13 --sample  # (unverified - needs data/sample.csv)
 ```
 
-Part of the medicaid_analysis pipeline (local-only tree; see `../README.md`).
+Part of the medicaid_analysis pipeline (see `../README.md`).

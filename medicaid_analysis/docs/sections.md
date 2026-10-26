@@ -7,14 +7,14 @@ Complete listing of all 40 analysis sections with descriptions, inputs, outputs,
 ### S01 — Exploratory Data Analysis
 
 - **Module**: `eda/summary.py`
-- **Outputs**: `01_eda_summary.csv`, `01_eda_summary.json`
+- **Outputs**: `01_summary_statistics.csv`, `01_numeric_summary.csv`, `01_eda_summary.json`
 - **Description**: Row counts, date range, unique providers/codes, numeric distribution summaries
 - **Returns**: `dict` with `row_count`, `total_paid`, `billing_npis`, `hcpcs_codes`, etc.
 
 ### S02 — Monthly & Yearly Spending Trends
 
 - **Module**: `eda/trends.py`
-- **Outputs**: `02_monthly_trends.csv`, `02_monthly_dashboard.png`, `02_yearly_spending.png`
+- **Outputs**: `02_monthly_trends.csv`, `02_yearly_summary.csv`, `01_monthly_dashboard.png`, `02_yearly_spending.png`
 - **Description**: Multi-metric monthly dashboard (paid, claims, providers, avg cost)
 
 ### S03 — Top Procedures
@@ -30,13 +30,13 @@ Complete listing of all 40 analysis sections with descriptions, inputs, outputs,
 ### S05 — Cost Efficiency Metrics
 
 - **Module**: `eda/cost_efficiency.py`
-- **Outputs**: `05_cost_efficiency.csv`, `05_cost_efficiency.png`
+- **Outputs**: `05_cost_efficiency_percentiles.csv`, `05_cost_distributions.png`
 - **Returns**: `cost_df` DataFrame (used by S20, S28)
 
 ### S12 — Highest-Value Records
 
 - **Module**: `eda/high_value.py`
-- **Outputs**: `12_high_value.csv`, `12_high_value.png`
+- **Outputs**: `12_highest_value_records.csv`, `12_high_value_hcpcs.png`
 
 ---
 
@@ -45,32 +45,32 @@ Complete listing of all 40 analysis sections with descriptions, inputs, outputs,
 ### S06 — Anomaly Detection
 
 - **Module**: `stats/anomaly.py`
-- **Method**: Z-score + IQR outlier detection on paid amounts
-- **Outputs**: `06_anomalies.csv`, `06_anomaly_detection.png`
+- **Method**: Z-score outlier detection on paid amounts plus provider-level Isolation Forest
+- **Outputs**: `06a_anomalies_zscore.csv`, `06b_anomalies_isolation_forest.csv`, `06_anomaly_scatter.png`, `06_zscore_by_procedure.png`
 
 ### S08 — Concentration Analysis
 
 - **Module**: `stats/concentration.py`
 - **Method**: Gini coefficient, HHI, Lorenz curve, top-N share
-- **Outputs**: `08_concentration.csv`, `08_lorenz_curve.png`
+- **Outputs**: `08_concentration_metrics.csv`, `08_lorenz_curves.png`
 
 ### S09 — Correlations
 
 - **Module**: `stats/correlations.py`
 - **Method**: Pearson/Spearman correlation matrices for key metrics
-- **Outputs**: `09_correlations.csv`, `09_correlation_matrix.png`
+- **Outputs**: `09_correlation_pearson.csv`, `09_correlation_spearman.csv`, `09_correlations.png`, `09_pairplot.png`
 
 ### S15 — Power-Law Distribution
 
 - **Module**: `stats/power_law.py`
 - **Method**: Log-log regression, Pareto tail fitting
-- **Outputs**: `15_power_law.csv`, `15_power_law.png`
+- **Outputs**: `15_pareto_stats.csv`, `15_power_law.png`
 
 ### S17 — Statistical Tests
 
 - **Module**: `stats/distribution_tests.py`
 - **Method**: KS test, Shapiro-Wilk, Anderson-Darling, normality assessment
-- **Outputs**: `17_statistical_tests.csv`, `17_distribution_tests.png`
+- **Outputs**: `17_statistical_tests.csv`, `17_qq_plots.png`
 
 ### S18 — Spending Deciles
 

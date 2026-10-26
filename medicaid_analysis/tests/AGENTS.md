@@ -1,9 +1,5 @@
 # AGENTS.md — `hhs-opendata/medicaid_analysis/tests`
 
-> Local-only path under `projects/ongoing/DataTools/` — matched by the
-> root `.gitignore` rule `projects/*`; never commit. Repo-wide policy:
-> see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`.
-
 ## What this is
 
 Pytest suite for the pipeline (imports/signatures, CLI behavior, utils,

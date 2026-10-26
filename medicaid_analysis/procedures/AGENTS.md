@@ -1,9 +1,5 @@
 # AGENTS.md — `hhs-opendata/medicaid_analysis/procedures`
 
-> Local-only path under `projects/ongoing/DataTools/` — matched by the
-> root `.gitignore` rule `projects/*`; never commit. Repo-wide policy:
-> see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`.
-
 ## What this is
 
 HCPCS (procedure-code) analysis — category breakdowns, co-billing patterns, claims-size distributions, and code lifecycles.
@@ -29,6 +25,5 @@ __init__.py, categories.py, claims_size.py, cooccurrence.py, lifecycle.py
 ## Gotchas
 
 - All four modules are standalone; no cross-section state required.
-- Never `git add` anything under `projects/ongoing/` (this repo tracks these
-  docs explicitly; data and generated artifacts stay untracked).
+- Generated `output/` and `plots/` artifacts are tracked here; `data/*.csv` and `medicaid.db` are git-ignored.
 - If the tree changed since 2026-08-29, re-verify the listing above against disk.

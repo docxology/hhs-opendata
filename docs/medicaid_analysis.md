@@ -53,7 +53,7 @@ uv run main.py --skip-fraud
 
 ## Fraud Detection
 
-6 independent detection methods + 1 composite scorer:
+7 independent detection methods + 1 composite scorer:
 
 1. **Upcoding** — Z-score deviation from peer pricing
 2. **Velocity** — Sudden billing volume spikes

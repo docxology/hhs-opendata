@@ -1,6 +1,6 @@
 # Medicaid Provider Spending — Analysis Pipeline
 
-Modular 40-section analysis of CMS Medicaid provider-level spending data. Organized into 8 subpackages covering EDA, statistical modeling, provider behavior, procedure analysis, temporal trends, visualization, and fraud detection.
+Modular 40-section analysis of the HHS Medicaid Provider Spending dataset. Organized into 8 subpackages covering EDA, statistical modeling, provider behavior, procedure analysis, temporal trends, visualization, and fraud detection.
 
 ## Quick Start
 
@@ -63,9 +63,7 @@ medicaid_analysis/
 
 ## Data
 
-Source: [CMS Medicaid State Drug Utilization Data](https://data.cms.gov/)  
-File: `data/medicaid-provider-spending.csv`  
-Records: ~227 million rows, covering 617K+ billing providers and 10.8K+ HCPCS codes.
+Source: [Medicaid Provider Spending](https://opendata.hhs.gov/datasets/medicaid-provider-spending/) (HHS Open Data). File: `data/medicaid-provider-spending.csv` (git-ignored; download it from the source above). Coverage: 2018-01 – 2024-12; ~227 million rows, covering 617K+ billing providers and 10.8K+ HCPCS codes.
 
 ## Documentation
 

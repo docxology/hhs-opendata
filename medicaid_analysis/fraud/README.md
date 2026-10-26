@@ -1,6 +1,6 @@
 # `fraud/`
 
-Fraud detection suite — sections S33-S40: six independent detection methods (upcoding, billing velocity, phantom billing, behavioral clustering, cost outliers, relationship anomalies, temporal anomalies) plus S40, which combines all signals into a composite per-provider risk score and tier.
+Fraud detection suite — sections S33-S40: seven independent detection methods (upcoding, billing velocity, phantom billing, behavioral clustering, cost outliers, relationship anomalies, temporal anomalies) plus S40, which combines all signals into a composite per-provider risk score and tier.
 
 ## Sections implemented
 
@@ -24,4 +24,4 @@ cd medicaid_analysis
 uv run main.py --sections 33 34 35 40 --sample  # (unverified - needs data/sample.csv)
 ```
 
-Part of the medicaid_analysis pipeline (local-only tree; see `../README.md`).
+Part of the medicaid_analysis pipeline (see `../README.md`).

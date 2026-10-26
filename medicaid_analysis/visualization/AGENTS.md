@@ -1,9 +1,5 @@
 # AGENTS.md — `hhs-opendata/medicaid_analysis/visualization`
 
-> Local-only path under `projects/ongoing/DataTools/` — matched by the
-> root `.gitignore` rule `projects/*`; never commit. Repo-wide policy:
-> see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`.
-
 ## What this is
 
 Deep-dive charts and dashboards — distribution deep dives, multi-dimensional outlier profiles, and the executive summary dashboard.
@@ -29,6 +25,5 @@ __init__.py, distributions.py, executive.py, outliers.py
 ## Gotchas
 
 - This package consumes shared state: S20/S28 need S05's `cost_df`, and S32 needs S01's `eda` dict plus S22's `yoy_totals`. Running S32 alone logs a warning and skips. Do not call these with placeholder DataFrames.
-- Never `git add` anything under `projects/ongoing/` (this repo tracks these
-  docs explicitly; data and generated artifacts stay untracked).
+- Generated `output/` and `plots/` artifacts are tracked here; `data/*.csv` and `medicaid.db` are git-ignored.
 - If the tree changed since 2026-08-29, re-verify the listing above against disk.

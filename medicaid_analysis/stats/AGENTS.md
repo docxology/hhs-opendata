@@ -1,9 +1,5 @@
 # AGENTS.md — `hhs-opendata/medicaid_analysis/stats`
 
-> Local-only path under `projects/ongoing/DataTools/` — matched by the
-> root `.gitignore` rule `projects/*`; never commit. Repo-wide policy:
-> see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`.
-
 ## What this is
 
 Statistical tests and models — anomalies, concentration, correlations, power law, normality tests, spending deciles, and Benford's Law.
@@ -29,6 +25,5 @@ __init__.py, anomaly.py, benfords_law.py, concentration.py, correlations.py, dis
 ## Gotchas
 
 - S06, S09, S17 depend on the `cost_df` produced by S05; run S05 first (or all sections) or the orchestrator skips them with a warning.
-- Never `git add` anything under `projects/ongoing/` (this repo tracks these
-  docs explicitly; data and generated artifacts stay untracked).
+- Generated `output/` and `plots/` artifacts are tracked here; `data/*.csv` and `medicaid.db` are git-ignored.
 - If the tree changed since 2026-08-29, re-verify the listing above against disk.

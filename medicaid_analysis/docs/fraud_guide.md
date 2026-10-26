@@ -2,7 +2,7 @@
 
 ## Overview
 
-The fraud detection module (sections 33–40) implements six independent detection methods plus a composite scoring system. Each method flags suspicious providers from a different analytical angle, and the composite scorer combines all signals.
+The fraud detection module (sections 33–40) implements seven independent detection methods plus a composite scoring system. Each method flags suspicious providers from a different analytical angle, and the composite scorer combines all signals.
 
 ## Detection Methods
 

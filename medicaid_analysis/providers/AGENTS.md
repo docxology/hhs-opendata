@@ -1,9 +1,5 @@
 # AGENTS.md — `hhs-opendata/medicaid_analysis/providers`
 
-> Local-only path under `projects/ongoing/DataTools/` — matched by the
-> root `.gitignore` rule `projects/*`; never commit. Repo-wide policy:
-> see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`.
-
 ## What this is
 
 Provider-level behavior analysis — how billing and servicing NPIs differ, and how provider portfolios evolve.
@@ -29,6 +25,5 @@ __init__.py, billing.py, diversity.py, growth.py, market_share.py, network.py, s
 ## Gotchas
 
 - All seven modules are standalone (only `utils/` dependency); any can run independently through `main.py --sections`.
-- Never `git add` anything under `projects/ongoing/` (this repo tracks these
-  docs explicitly; data and generated artifacts stay untracked).
+- Generated `output/` and `plots/` artifacts are tracked here; `data/*.csv` and `medicaid.db` are git-ignored.
 - If the tree changed since 2026-08-29, re-verify the listing above against disk.
