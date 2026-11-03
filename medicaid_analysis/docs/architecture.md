@@ -12,13 +12,13 @@
 
 ```
 main.py (orchestrator)
-  ├── utils/          ← all packages depend on this
-  ├── eda/            ← standalone
-  ├── stats/          ← standalone
-  ├── providers/      ← standalone
-  ├── procedures/     ← standalone
-  ├── temporal/       ← standalone
-  ├── visualization/  ← depends on eda (cost_df), temporal (yoy_totals)
+  ├── medicaid_analysis/utils/          ← all packages depend on this
+  ├── medicaid_analysis/eda/            ← standalone
+  ├── medicaid_analysis/stats/          ← standalone
+  ├── medicaid_analysis/providers/      ← standalone
+  ├── medicaid_analysis/procedures/     ← standalone
+  ├── medicaid_analysis/temporal/       ← standalone
+  ├── medicaid_analysis/visualization/  ← depends on eda (cost_df), temporal (yoy_totals)
   └── fraud/          ← S40 depends on S33-S39 outputs
 ```
 
