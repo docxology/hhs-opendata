@@ -95,4 +95,4 @@ Output is written to `medicaid_analysis/output/` and `medicaid_analysis/plots/`
 
 ## License
 
-Dataset is public domain per HHS Open Data policy.
+Code and analysis: [MIT License](LICENSE). The source dataset is public domain per HHS Open Data policy.
