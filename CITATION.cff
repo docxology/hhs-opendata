@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: software
+title: "hhs-opendata"
+authors:
+  - family-names: Friedman
+    given-names: Daniel Ari
+    orcid: "https://orcid.org/0000-0001-6232-9096"
+repository-code: "https://github.com/docxology/hhs-opendata"
+abstract: "Analysis of the HHS Medicaid Provider Spending open dataset, ~11 GB covering Jan 2018 to Dec 2024: DuckDB queries the CSVs in place with Polars, scikit-learn z-score outlier detection, and Matplotlib/Seaborn charts of cost-per-claim and cost-per-beneficiary at provider x procedure x month grain."
+license: MIT
