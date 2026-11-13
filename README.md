@@ -2,6 +2,8 @@
 
 Analysis of the **Medicaid Provider Spending** dataset published by the U.S. Department of Health & Human Services.
 
+![Medicaid Provider Spending executive summary: headline totals, monthly spending and claims trends, growth, distributions and top procedures](medicaid_analysis/plots/32_executive_summary.png)
+
 > **Source:** <https://opendata.hhs.gov/datasets/medicaid-provider-spending/>
 
 ## Dataset
