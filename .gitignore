@@ -11,3 +11,6 @@ __pycache__/
 *.pyc
 .venv/
 *.tmp
+
+# Local manuscript replay
+/output/
