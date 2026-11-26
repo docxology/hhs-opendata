@@ -25,6 +25,7 @@ medicaid_analysis/
 
 ```bash
 cd medicaid_analysis
+uv sync --locked
 
 # Full pipeline (all 40 sections)
 uv run main.py
@@ -51,9 +52,11 @@ uv run main.py --skip-fraud
 | S20, S28, S32 | `visualization/` | Distributions, outlier profiles, executive dashboard |
 | S33–S40 | `fraud/` | Upcoding, velocity, phantom, clustering, cost outliers, relationships, temporal, composite scoring |
 
-## Fraud Detection
+## Anomaly indicators
 
-7 independent detection methods + 1 composite scorer:
+The package contains seven independent indicators and a composite scorer.
+These are statistical screening signals. Review the data, denominators
+and methodology before interpreting a flagged record.
 
 1. **Upcoding** — Z-score deviation from peer pricing
 2. **Velocity** — Sudden billing volume spikes
@@ -63,6 +66,9 @@ uv run main.py --skip-fraud
 6. **Relationships** — Concentrated billing-servicing pairs
 7. **Temporal** — Low-entropy / high-CV patterns
 8. **Composite** — Multi-signal risk scoring (Clean/Low/Medium/High)
+
+The [archive replay](reproduce.md) verifies the bundled aggregate results
+and stages manuscript inputs without processing the full raw CSV.
 
 ## Dependencies
 
