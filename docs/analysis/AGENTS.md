@@ -1,16 +1,11 @@
-# AGENTS.md — `hhs-opendata/medicaid_analysis/docs`
+# Medicaid analysis guides
 
-## What this is
+The [guide index](README.md) maps this folder to the
+[analysis package](../../medicaid_analysis/README.md). When a section or entry
+point changes, update the [section catalog](sections.md),
+[module reference](modules.md) and any affected command in the
+[contributing guide](contributing.md).
 
-Docs for the medicaid_analysis subproject.
-
-## Layout (verified by direct listing, 2026-08-29)
-
-```
-architecture.md, configuration.md, contributing.md, data_dictionary.md, fraud_guide.md, modules.md, sections.md
-```
-
-## Gotchas
-
-- If the tree changed since 2026-08-29, re-verify the listing against disk.
-- These docs are tracked; only `data/*.csv` and `medicaid.db` are git-ignored.
+Compare paths and configuration claims with the package source. Run the locked
+pytest commands from `medicaid_analysis/`. Report which checks skipped when the
+real `data/sample.csv` was unavailable.

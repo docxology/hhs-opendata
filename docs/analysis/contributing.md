@@ -13,7 +13,9 @@ medicaid_analysis/
 ├── temporal/               # Time-series analysis
 ├── visualization/          # Deep-dive charts and dashboards
 ├── fraud/                  # Fraud detection suite
-└── docs/                   # Documentation
+└── tests/                  # Import, CLI, helper and sample-data checks
+
+docs/analysis/              # Analysis documentation at the repository root
 ```
 
 ## Adding a New Analysis Section
@@ -80,9 +82,9 @@ if should_run(NN, args):
 
 ### 5. Update Documentation
 
-- Add entry to `docs/sections.md`
-- Add row to `docs/modules.md`
-- If new fraud method: update `docs/fraud_guide.md`
+- Add the section to the [section catalog](sections.md).
+- Update the [module reference](modules.md).
+- Update the [anomaly guide](fraud_guide.md) when a detection method changes.
 
 ## Code Conventions
 
@@ -95,18 +97,29 @@ if should_run(NN, args):
 
 ## Testing
 
-### Unit & Integration Tests
+### Unit and integration tests
+
+From the repository root, enter the analysis project and run the locked suite.
+This working directory lets the CLI tests invoke `main.py`.
 
 ```bash
-# Run the full test suite (93 tests)
-uv run python -m pytest tests/ -v
-
-# Run a specific test module
-uv run python -m pytest tests/test_utils.py -v
-uv run python -m pytest tests/test_sections.py -v
-uv run python -m pytest tests/test_imports.py -v
-uv run python -m pytest tests/test_main.py -v
+cd medicaid_analysis
+uv run --locked python -m pytest tests/ -rs
 ```
+
+To check a specific area, run one of these commands from the same directory.
+
+```bash
+uv run --locked python -m pytest tests/test_utils.py -rs
+uv run --locked python -m pytest tests/test_imports.py -rs
+uv run --locked python -m pytest tests/test_main.py -rs
+uv run --locked python -m pytest tests/test_sections.py -rs
+```
+
+The sample-backed sections and CSV-query test skip when the repository has no
+`data/sample.csv`. With the raw HHS CSV already in `data/`, generate the standard
+one-percent sample from `medicaid_analysis/` with
+`uv run --locked python create_sample.py --pct 1`.
 
 ### End-to-End Pipeline
 

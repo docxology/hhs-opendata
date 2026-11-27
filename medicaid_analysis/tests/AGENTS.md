@@ -1,26 +1,13 @@
-# AGENTS.md — `hhs-opendata/medicaid_analysis/tests`
+# Medicaid analysis test guide
 
-## What this is
+Use the [test index](README.md) for the supported commands and module map.
+Run from `medicaid_analysis/` so pytest reads the package configuration and
+`test_main.py` can invoke `main.py`.
 
-Pytest suite for the pipeline (imports/signatures, CLI behavior, utils,
-sample-data integration). Run from `medicaid_analysis/` with `uv run pytest`
-(pyproject sets `pythonpath=["."]` and `testpaths=["tests"]`).
-
-## Layout (verified by direct listing, 2026-08-29)
-
-```
-__init__.py, test_imports.py, test_main.py, test_sections.py, test_utils.py
-```
-
-## Invariants
-
-- `test_imports.py` SECTION_REGISTRY is the signature contract for all 40
-  sections; update it in the same change that adds/changes a section function.
-- Integration tests (`test_sections.py`) **skip** when `data/sample.csv` is
-  absent — an empty-looking pass may just mean no sample data; check the skip count.
-- Tests write real artifacts into `output/`/`plots/` via the shared `OUTPUT_DIR`/`PLOTS_DIR`; they are integration tests, not unit-isolated.
-
-## Gotchas
-
-- Run pytest from `medicaid_analysis/` (pythonpath relies on the local pyproject).
-- If the tree changed since 2026-08-29, re-verify the listing above against disk.
+- Update `SECTION_REGISTRY` in [`test_imports.py`](test_imports.py) when a
+  registered section’s signature changes.
+- Keep configured-path tests runnable from a clean checkout. The raw CSV and
+  `data/sample.csv` are local inputs.
+- Use real files and queries. Check pytest’s skip summary for sample-backed
+  tests, and use the output overrides described in the test index when retaining
+  any existing analysis outputs.
