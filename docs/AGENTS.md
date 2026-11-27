@@ -6,13 +6,14 @@
   `eda/`, `stats/`, `providers/`, `procedures/`, `temporal/`,
   `visualization/`, `fraud/`; own `pyproject.toml`, run with `uv`).
 - `data/` — raw dataset location (git-ignored; ~11 GB CSV / ~3.4 GB compressed).
-- `docs/` — `README.md` (hub) and `medicaid_analysis.md` (pipeline overview:
-  40 analysis sections, CSV/plot outputs, stage structure).
+- `docs/` — [documentation index](README.md), [pipeline overview](medicaid_analysis.md),
+  [analysis guides](analysis/README.md) and the [manuscript sources](manuscript/README.md).
 - Root `README.md` — dataset schema, coverage, quick start, technology table.
 
 ## Conventions observed
 
-- Dataset stays out of git; only code and docs are tracked.
+- Raw CSV and local DuckDB files stay outside Git. The repo tracks selected
+  aggregate analysis outputs and publication artifacts.
 - Analysis is sectioned and modular; outputs land in `medicaid_analysis/output/`
   and `medicaid_analysis/plots/`.
 - `uv sync` + `uv run main.py` inside `medicaid_analysis/` per root README (all 40 sections; `run_multi_scale.py` for per-scale runs).

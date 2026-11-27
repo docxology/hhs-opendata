@@ -12,9 +12,9 @@ class TestConfig:
         assert BASE_DIR.exists()
         assert BASE_DIR.is_dir()
 
-    def test_data_dir_exists(self):
-        from utils import DATA_DIR
-        assert DATA_DIR.exists()
+    def test_data_dir_path(self):
+        from utils import BASE_DIR, DATA_DIR
+        assert DATA_DIR == BASE_DIR.parent / "data"
 
     def test_output_dirs_configurable(self):
         from utils import OUTPUT_DIR, PLOTS_DIR

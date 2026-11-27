@@ -1,22 +1,23 @@
-# `tests/`
+# Medicaid analysis tests
 
-Pytest suite for the medicaid_analysis pipeline: import/signature contract for all
-40 section functions, `main.py` CLI behavior, utils helpers, and integration runs
-of real sections against the sample dataset.
-
-## Run
+Run from the repository root. Pytest loads the settings in
+[`medicaid_analysis/pyproject.toml`](../pyproject.toml), and the CLI tests find
+`main.py` in the analysis project.
 
 ```bash
 cd medicaid_analysis
-uv run pytest            # testpaths=tests, pythonpath=. (set in pyproject.toml)
-uv run pytest tests/test_sections.py -v   # integration - skips if data/sample.csv is absent
+uv run --locked python -m pytest tests/ -rs
 ```
 
-## Files
+| Test module | Coverage |
+| --- | --- |
+| [`test_imports.py`](test_imports.py) | Imports and signatures for the registered analysis sections. |
+| [`test_main.py`](test_main.py) | CLI help, argument defaults and section selection. |
+| [`test_sections.py`](test_sections.py) | Analysis sections and artifacts produced from the real sample CSV. |
+| [`test_utils.py`](test_utils.py) | Configured paths, formatting, DuckDB, CSV and figure helpers. |
 
-- `test_imports.py` — asserts every `sNN_*` function exists with its expected signature (SECTION_REGISTRY)
-- `test_main.py` — `main.py --help` and argument-parsing defaults (subprocess)
-- `test_sections.py` — integration: runs sections on `data/sample.csv` and checks output CSV/PNG artifacts appear; module-scoped fixtures skip cleanly when the sample CSV is absent
-- `test_utils.py` — config paths, formatting, I/O helpers
-
-Part of the medicaid_analysis subproject. Parent: `../README.md`.
+The section tests and CSV-query test require `data/sample.csv` at the repository
+root. To prepare it from the downloaded HHS CSV, follow the
+[contributing guide](../../docs/analysis/contributing.md#unit-and-integration-tests).
+Use `MEDICAID_OUTPUT_DIR` and `MEDICAID_PLOTS_DIR` to direct test artifacts to
+scratch directories when you want to keep the normal analysis output separate.
